@@ -31,11 +31,11 @@
                         '.$this->session->flashdata('username').'
                 </div>'?>
 <?php endif; ?>
-<body class="login-page" style="background-color: #4CAF50;">
+<body class="login-page" style="background-color: #2196F3;">
     <div class="login-box">
         <div class="logo">
-            <a href="javascript:void(0);">Login<b>SIMONIKA</b></a>
-            <small>Sistem Monitoring Kualitas Air</small>
+            <a href="javascript:void(0);">Login<b>HIDROPONIK</b></a>
+            <small>Sistem Monitoring Hidroponik</small>
         </div>
         <div class="card">
             <div class="body">

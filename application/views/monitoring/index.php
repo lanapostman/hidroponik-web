@@ -1,6 +1,6 @@
 <div class="row clearfix">
   <!-- Suhu -->
-  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
     <div class="card">
       <div class="header">
         <h2>SUHU</h2>
@@ -13,7 +13,7 @@
   <!-- #END# Suhu -->
 
   <!-- Ph -->
-  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
     <div class="card">
       <div class="header">
         <h2>PH</h2>
@@ -25,32 +25,31 @@
   </div>
   <!-- #END# Ph -->
 
-  <!-- Kekeruhan -->
-  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+  <!-- Ppm -->
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
     <div class="card">
       <div class="header">
-        <h2>KEKERUHAN</h2>
+        <h2>NUTRISI</h2>
       </div>
       <div class="body">
-        <div id="chart-kekeruhan" style="height: 250px;"></div>
+        <div id="chart-nutrisi" style="height: 250px;"></div>
       </div>
     </div>
   </div>
-  <!-- #END# Kekeruhan -->
-</div>
+  <!-- #END# Ppm -->
 
-<div class="row clearfix">
-  <?php
-    if ($myData['kekeruhan'] <= 50) {
-      echo '<h2 style="margin-left: 15px">Status: Baik</h2>';
-    }
-    else if ($myData['kekeruhan'] >= 51) {
-      echo '<h2 style="margin-left: 15px">Status: Cukup Baik</h2>';
-    }
-    else {
-      echo '<h2 style="margin-left: 15px">Status: Tidak Baik</h2>';
-    }
-  ?>
+  <!-- Ketinggian -->
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
+    <div class="card">
+      <div class="header">
+        <h2>KETINGGIAN</h2>
+      </div>
+      <div class="body">
+        <div id="chart-ketinggian" style="height: 250px;"></div>
+      </div>
+    </div>
+  </div>
+  <!-- #END# Ketinggian -->
 </div>
 
 <script type="text/javascript">
@@ -119,7 +118,7 @@
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Data Ph",
+                "caption": "Data pH",
                 "lowerlimit": "0",
                 "upperlimit": "15",
                 "showvalue": "1",
@@ -157,15 +156,15 @@
     FusionCharts.ready(function(){
       var chartObj = new FusionCharts({
         type: 'angulargauge',
-        renderAt: 'chart-kekeruhan',
+        renderAt: 'chart-nutrisi',
         width: '100%',
         height: '100%',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Data Kekeruhan",
+                "caption": "Data Nutrisi (PPM)",
                 "lowerlimit": "0",
-                "upperlimit": "160",
+                "upperlimit": "1500",
                 "showvalue": "1",
                 "theme": "fusion",
                 "showtooltip": "0"
@@ -173,21 +172,65 @@
             "colorRange": {
                 "color": [{
                   "minvalue": "0",
-                  "maxvalue": "80",
+                  "maxvalue": "500",
                   "code": "#F2726F"
                 }, {
-                    "minValue": "80",
-                    "maxValue": "120",
+                    "minValue": "500",
+                    "maxValue": "1000",
                     "code": "#FFC533"
                 }, {
-                    "minValue": "120",
-                    "maxValue": "160",
+                    "minValue": "1000",
+                    "maxValue": "1500",
                     "code": "#62B58F"
                 }]
             },
             "dials": {
                 "dial": [{
                     "value": "<?php echo $myData['kekeruhan']?>"
+                }]
+            }
+        }
+    }
+    );
+      chartObj.render();
+    });
+  </script>
+
+  <script type="text/javascript">
+    FusionCharts.ready(function(){
+      var chartObj = new FusionCharts({
+        type: 'angulargauge',
+        renderAt: 'chart-ketinggian',
+        width: '100%',
+        height: '100%',
+        dataFormat: 'json',
+        dataSource: {
+            "chart": {
+                "caption": "Data Ketinggian Air (CM)",
+                "lowerlimit": "0",
+                "upperlimit": "50",
+                "showvalue": "1",
+                "theme": "fusion",
+                "showtooltip": "0"
+            },
+            "colorRange": {
+                "color": [{
+                  "minvalue": "0",
+                  "maxvalue": "20",
+                  "code": "#F2726F"
+                }, {
+                    "minValue": "20",
+                    "maxValue": "40",
+                    "code": "#FFC533"
+                }, {
+                    "minValue": "40",
+                    "maxValue": "50",
+                    "code": "#62B58F"
+                }]
+            },
+            "dials": {
+                "dial": [{
+                    "value": "35"
                 }]
             }
         }

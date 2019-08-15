@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>
-        SISTEM MONITORING KUALITAS AIR
+        HIDROPONIK AIR
     </title>
     
     <!-- Step 1 - Including vue  -->
@@ -220,7 +220,7 @@
    
 </head>
 
-<body class="theme-green">
+<body class="theme-blue">
     <!-- Page Loader -->
     
     <!-- #END# Page Loader -->
@@ -284,13 +284,13 @@
                     <li class="<?php if($this->uri->segment(1)=="ikan"){echo "active";} ?>">
                         <a href="<?php echo base_url('ikan'); ?>">
                             <i class="material-icons">assignment</i>
-                            <span>Data Ikan</span>
+                            <span>Data Tanaman</span>
                         </a>
                     </li>
                     <li class="<?php if($this->uri->segment(1)=="siklus"){echo "active";} ?>">
                         <a href="<?php echo base_url('siklus'); ?>">
                             <i class="material-icons">cached</i>
-                            <span>Siklus</span>
+                            <span>Siklus Tam</span>
                         </a>
                     </li>
                     <li class="<?php if($this->uri->segment(1)=="prediksi"){echo "active";} ?>">
