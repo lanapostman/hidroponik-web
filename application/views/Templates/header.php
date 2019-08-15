@@ -234,7 +234,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="<?php echo base_url(); ?>">MONITORING KUALITAS AIR</a>
+                <a class="navbar-brand" href="<?php echo base_url(); ?>">MONITORING HIDROPONIK</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -290,7 +290,7 @@
                     <li class="<?php if($this->uri->segment(1)=="siklus"){echo "active";} ?>">
                         <a href="<?php echo base_url('siklus'); ?>">
                             <i class="material-icons">cached</i>
-                            <span>Siklus Tam</span>
+                            <span>Siklus Tanaman</span>
                         </a>
                     </li>
                     <li class="<?php if($this->uri->segment(1)=="prediksi"){echo "active";} ?>">
