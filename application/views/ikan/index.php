@@ -3,7 +3,7 @@
         <div class="card">
             <div class="header">
                 <h2>
-                    Data Ikan
+                    Data Tanaman
                 </h2>
                 <ul class="header-dropdown m-r--5">
                     <li><button type="button" class="btn btn-success waves-effect" onclick="add()">Tambah</button></li>
@@ -14,7 +14,7 @@
                     <table id="table_id" class="table table-bordered table-hover js-basic-example dataTable" style="width:100%">
                         <thead>
                             <tr>
-                                <th>NAMA IKAN</th>
+                                <th>NAMA TANAMAN</th>
                                 <th class="text-center">AKSI</th>
                             </tr>
                         </thead>
