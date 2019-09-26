@@ -22,15 +22,12 @@
 	        	
 	            $no++;
 	            $row = array();
+	            $row[] = "<div class=''>".$field->nama_tanaman."</div>";
 	            $row[] = "<div class='text-center'>".$field->total_tebar."</div>";
-	            $row[] = "<div class=''>".$field->nama_ikan."</div>";
 	 			$row[] = "<div class=''>".$field->tanggal_tebar."</div>";
 	 			$row[] = "<div class=''>".$tgl_selesai."</div>";
 	 			$row[] = '<div class="text-center">
 	 						<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-	 						<div class="btn-group" role="group" aria-label="Third group">
-	 								<button type="button" class="btn bg-blue btn-block btn-xs waves-effect" onclick="detil_siklus('.$field->id_siklus.')" data-toggle="tooltip" data-placement="right" title="Detil Siklus"><i class="material-icons" style="font-size: 16px">visibility</i></button>
-                                </div>
 	 							<div class="btn-group" role="group" aria-label="Third group">
 	 								<button type="button" class="btn bg-orange btn-block btn-xs waves-effect" onclick="edit_siklus('.$field->id_siklus.')" data-toggle="tooltip" data-placement="right" title="Ubah Siklus"><i class="material-icons" style="font-size: 16px">create</i></button>
                                 </div>
@@ -80,7 +77,7 @@
 					<th>Id Siklus</th><td><span>".$row['id_siklus']."</span></td>
 				  </tr>
 				  <tr>
-				  	<th>Total Tebar (ekor)</th><td><span>".$row['total_tebar']."</span></td>
+				  	<th>Total Tanam</th><td><span>".$row['total_tebar']."</span></td>
 				  </tr>
 				  <tr>
 				  	<th>Tanggal Panen</th><td><span>".$tgl_panen."</span></td>

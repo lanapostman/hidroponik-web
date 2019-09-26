@@ -20,7 +20,8 @@
 	            $row[] = $field->timestamp;
 	            $row[] = "<div class='text-center'>".$field->suhu."</div>";
 	 			$row[] = "<div class='text-center'>".$field->ph."</div>";
-	 			$row[] = "<div class='text-center'>".$field->kekeruhan."</div>";
+	 			$row[] = "<div class='text-center'>".$field->nutrisi."</div>";
+	 			$row[] = "<div class='text-center'>".$field->kedalaman."</div>";
 	            $data[] = $row;
 	        }
 	 	

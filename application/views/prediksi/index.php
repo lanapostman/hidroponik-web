@@ -12,7 +12,7 @@
 						</a>
 						<ul class="dropdown-menu pull-right">
 							<li><a href="#" onclick="add()">TAMBAH PREDIKSI KG</a></li>
-							<li><a href="#" onclick="add1()">TAMBAH PREDIKSI EKOR</a></li>
+							<!--<li><a href="#" onclick="add1()">TAMBAH PREDIKSI EKOR</a></li>-->
 						</ul>
 					</li>
 				</ul>
@@ -20,7 +20,7 @@
 			<div class="body">
 				<ul class="nav nav-tabs tab-nav-right" role="tablist">
 					<li role="presentation" class="active"><a href="#prediksi" data-toggle="tab">DATA PREDIKSI PER KG</a></li>
-					<li role="presentation"><a href="#prediksi_ekor" data-toggle="tab">DATA PREDIKSI PER EKOR</a></li>
+					<!--<li role="presentation"><a href="#prediksi_ekor" data-toggle="tab">DATA PREDIKSI PER EKOR</a></li>-->
 				</ul>
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane fade in active" id="prediksi">

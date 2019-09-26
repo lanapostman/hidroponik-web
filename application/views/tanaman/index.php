@@ -37,15 +37,15 @@
             </div>
             <div class="modal-body">
                 <form id="form" action="#">
-                    <input type="hidden" value="0" name="id_ikan">
+                    <input type="hidden" value="0" name="id_tanaman">
                     <div class="row clearfix">
                         <div class="col-lg-3 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                            <label for="nama_tempat">Nama Ikan</label>
+                            <label for="nama_tempat">Nama Tanaman</label>
                         </div>
                         <div class="col-lg-8 col-md-10 col-sm-8 col-xs-7">
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text" id="nama_ikan" name="nama_ikan" class="form-control" placeholder="Masukkan Nama Ikan">
+                                    <input type="text" id="nama_ikan" name="nama_ikan" class="form-control" placeholder="Masukkan Nama Tanaman">
                                 </div>
                                 <span id="result_ikan"></span>
                                 <span class="pesan pesan-nama_ikan">Data tidak boleh kosong!</span>
@@ -74,7 +74,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-                <p>Apakah anda yakin ingin menghapus Ikan ini?</p>
+                <p>Apakah anda yakin ingin menghapus Tanaman ini?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Batal</button>
@@ -93,7 +93,7 @@
             "order": [], 
              
             "ajax": {
-                "url": "<?php echo base_url('ikan/get_data')?>",
+                "url": "<?php echo base_url('tanaman/get_data')?>",
                 "type": "POST"
             },
  
@@ -133,13 +133,13 @@
         $(".pesan-nama_ikan").hide();
         $('#modal_ikan').val('');
         $('#modal_ikan').modal('show');
-        $('.modal-title').text('Tambah Jenis Ikan');
+        $('.modal-title').text('Tambah Jenis Tanaman');
     }
 
     function save() {
         var url;
         if (save_method == 'add') {
-            url = '<?php echo base_url('ikan/create'); ?>';
+            url = '<?php echo base_url('tanaman/create'); ?>';
             var nama_ikan = $('#nama_ikan').val().length;
             if (nama_ikan == 0) {
                 $(".pesan-nama_ikan").css('display','block');
@@ -147,7 +147,7 @@
             }
         }
         else {
-            url = '<?php echo base_url('ikan/update'); ?>';
+            url = '<?php echo base_url('tanaman/update'); ?>';
         }
         
         $.ajax({
@@ -170,14 +170,14 @@
 
 <script type="text/javascript">
 
-    function modal_hapus(id_ikan) {
-        $('#button_hapus').attr('onclick', 'delete_ikan('+id_ikan+')');
+    function modal_hapus(id_tanaman) {
+        $('#button_hapus').attr('onclick', 'delete_ikan('+id_tanaman+')');
         $('#modal_hapus').modal('show');
     }
 
-    function delete_ikan(id_ikan) {
+    function delete_ikan(id_tanaman) {
         $.ajax({
-            url: "<?php echo site_url('ikan/delete/') ;?>/"+id_ikan,
+            url: "<?php echo site_url('tanaman/delete/') ;?>/"+id_tanaman,
             type: "POST",
             dataType: "JSON",
             success: function(data) {
@@ -193,19 +193,19 @@
 </script>
 
 <script type="text/javascript">
-    function edit_ikan(id_ikan) {
+    function edit_ikan(id_tanaman) {
         save_method = 'update';
         var form = $('#form')[0].reset();
 
         //load data dari AJAX
         $.ajax({
-            url: "<?php echo site_url('ikan/ajax_edit/') ;?>/"+id_ikan,
+            url: "<?php echo site_url('tanaman/ajax_edit/') ;?>/"+id_tanaman,
             type: "GET",
             dataType: "JSON",
             success: function(data) {
                 form;
-                $('[name="id_ikan"]').val(data.id_ikan);
-                $('[name="nama_ikan"]').val(data.nama_ikan);
+                $('[name="id_tanaman"]').val(data.id_tanaman);
+                $('[name="nama_ikan"]').val(data.nama_tanaman);
                 $('#modal_ikan').modal('show');
 
                 $('#modal-title').text('Ubah Ikan');

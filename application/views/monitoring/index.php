@@ -173,7 +173,7 @@
                 "color": [{
                   "minvalue": "0",
                   "maxvalue": "500",
-                  "code": "#F2726F"
+                  "code": "#62B58F"
                 }, {
                     "minValue": "500",
                     "maxValue": "1000",
@@ -181,12 +181,12 @@
                 }, {
                     "minValue": "1000",
                     "maxValue": "1500",
-                    "code": "#62B58F"
+                    "code": "#F2726F"
                 }]
             },
             "dials": {
                 "dial": [{
-                    "value": "<?php echo $myData['kekeruhan']?>"
+                    "value": "<?php echo $myData['nutrisi']?>"
                 }]
             }
         }
@@ -230,7 +230,7 @@
             },
             "dials": {
                 "dial": [{
-                    "value": "35"
+                    "value": "<?php echo $myData['kedalaman']?>"
                 }]
             }
         }

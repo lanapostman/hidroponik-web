@@ -1,13 +1,13 @@
 <?php
-	Class Ikan_model extends CI_Model {
+	Class Tanaman_model extends CI_Model {
 		public function __construct() {
 			$this->load->database();
 		}
 
-		var $table = 'jenis_ikan'; //nama tabel dari database
-        var $column_order = array('nama_ikan'); //field yang ada di table user
-        var $column_search = array('nama_ikan'); //field yang diizin untuk pencarian 
-        var $order = array('id_ikan' => 'DESC'); // default order
+		var $table = 'jenis_tanaman'; //nama tabel dari database
+        var $column_order = array('nama_tanaman'); //field yang ada di table user
+        var $column_search = array('nama_tanaman'); //field yang diizin untuk pencarian 
+        var $order = array('id_tanaman' => 'DESC'); // default order
 
         private function _get_datatables_query() {
             $this->db->from($this->table);
@@ -67,29 +67,29 @@
 
         public function add_ikan() {
             $data = array(
-                'nama_ikan' => $this->input->post('nama_ikan')
+                'nama_tanaman' => $this->input->post('nama_ikan')
             );
 
-            return $this->db->insert('jenis_ikan', $data);
+            return $this->db->insert('jenis_tanaman', $data);
         }
 
-        public function delete_ikan($id_ikan) {
-            $this->db->where('id_ikan', $id_ikan);
-            $this->db->delete('jenis_ikan');
+        public function delete_ikan($id_tanaman) {
+            $this->db->where('id_tanaman', $id_tanaman);
+            $this->db->delete('jenis_tanaman');
             return true;
         }
 
-        public function get_by_id($id_ikan) {
+        public function get_by_id($id_tanaman) {
             $this->db->from($this->table);
-            $this->db->where('id_ikan', $id_ikan);
+            $this->db->where('id_tanaman', $id_tanaman);
             $query = $this->db->get();
 
             return $query->row();
         }
 
-        public function cek_ikan($nama_ikan) {
-            $this->db->where('nama_ikan' , $nama_ikan);
-            $query = $this->db->get('jenis_ikan');
+        public function cek_ikan($nama_tanaman) {
+            $this->db->where('nama_tanaman' , $nama_tanaman);
+            $query = $this->db->get('jenis_tanaman');
 
             if($query->num_rows() > 0) {
                 echo "taken";
@@ -99,9 +99,9 @@
             }
         }
 
-        public function cek_iwak($nama_ikan) {
-            $this->db->where('nama_ikan' , $nama_ikan);
-            $query = $this->db->get('jenis_ikan');
+        public function cek_iwak($nama_tanaman) {
+            $this->db->where('nama_tanaman' , $nama_tanaman);
+            $query = $this->db->get('jenis_tanaman');
 
             if ($query->num_rows() > 0){
                 return true;
@@ -113,18 +113,18 @@
 
         public function edit_ikan() {
             $data = array(
-                'nama_ikan' => $this->input->post('nama_ikan')
+                'nama_tanaman' => $this->input->post('nama_ikan')
             );
 
-            $this->db->where('id_ikan', $this->input->post('id_ikan'));
-            $this->db->update('jenis_ikan', $data);
+            $this->db->where('id_tanaman', $this->input->post('id_tanaman'));
+            $this->db->update('jenis_tanaman', $data);
             return $this->db->affected_rows();
         }
 
-        public function get_nama_ikan($nama_ikan) {
-            $query = $this->db->select('nama_ikan')
-            ->from('jenis_ikan')
-            ->where('nama_ikan', $nama_ikan)
+        public function get_nama_ikan($nama_tanaman) {
+            $query = $this->db->select('nama_tanaman')
+            ->from('jenis_tanaman')
+            ->where('nama_tanaman', $nama_tanaman)
             ->get();
             return $query->row_array();
         }

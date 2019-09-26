@@ -49,21 +49,21 @@
             $this->_get_datatables_query();
             if($_POST['length'] != -1)
             $this->db->limit($_POST['length'], $_POST['start']);
-            $this->db->join('jenis_ikan', 'jenis_ikan.id_ikan = siklus.id_ikan');
+            $this->db->join('jenis_tanaman', 'jenis_tanaman.id_tanaman = siklus.id_ikan');
             $query = $this->db->get();
             return $query->result();
         }
      
         function count_filtered() {
             $this->_get_datatables_query();
-            $this->db->join('jenis_ikan', 'jenis_ikan.id_ikan = siklus.id_ikan');
+            $this->db->join('jenis_tanaman', 'jenis_tanaman.id_tanaman = siklus.id_ikan');
             $query = $this->db->get();
             return $query->num_rows();
         }
      
         public function count_all() {
             $this->_get_datatables_query();
-            $this->db->join('jenis_ikan', 'jenis_ikan.id_ikan = siklus.id_ikan');
+            $this->db->join('jenis_tanaman', 'jenis_tanaman.id_tanaman = siklus.id_ikan');
             $query = $this->db->get();
             return $query->num_rows();
         }
@@ -74,7 +74,7 @@
 		}
 
         public function get_ikan() {
-            $query = $this->db->get('jenis_ikan');
+            $query = $this->db->get('jenis_tanaman');
             return $query->result_array();
         }
 

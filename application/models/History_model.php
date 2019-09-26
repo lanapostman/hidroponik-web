@@ -5,8 +5,8 @@
 		}
 
 		var $table = 'data'; //nama tabel dari database
-        var $column_order = array('suhu', 'ph', 'kekeruhan', 'timestamp'); //field yang ada di table user
-        var $column_search = array('suhu', 'ph', 'kekeruhan', 'timestamp'); //field yang diizin untuk pencarian 
+        var $column_order = array('suhu', 'ph', 'nutrisi', 'ketinggian', 'timestamp'); //field yang ada di table user
+        var $column_search = array('suhu', 'ph', 'nutrisi', 'ketinggian', 'timestamp'); //field yang diizin untuk pencarian 
         var $order = array('id' => 'DESC'); // default order
 
         private function _get_datatables_query() {

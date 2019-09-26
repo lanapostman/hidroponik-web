@@ -281,9 +281,9 @@
                             <span>Log History</span>
                         </a>
                     </li>
-                    <li class="<?php if($this->uri->segment(1)=="ikan"){echo "active";} ?>">
-                        <a href="<?php echo base_url('ikan'); ?>">
-                            <i class="material-icons">assignment</i>
+                    <li class="<?php if($this->uri->segment(1)=="tanaman"){echo "active";} ?>">
+                        <a href="<?php echo base_url('tanaman'); ?>">
+                            <i class="material-icons">spa</i>
                             <span>Data Tanaman</span>
                         </a>
                     </li>

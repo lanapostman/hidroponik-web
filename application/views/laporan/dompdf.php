@@ -34,12 +34,12 @@
 
 	<table class="table table-bordered">
 		<tr>
-			<th>Tanggal Tebar</th>
-			<th>Awal Tebar</th>
-			<th>Umur Awal</th>
+			<th>Tanggal Tanam</th>
+			<th>Awal Tanam</th>
+			<th>Umur Awal (Hari)</th>
 			<th>Tanggal Perubahan</th>
-			<th>Ikan Mati</th>
-			<th>Total Ikan</th>
+			<th>Tanaman Mati</th>
+			<th>Total Tanaman</th>
 			<th>Total (Kg)</th>
 			<th>Harga (Kg)</th>
 			<th>Hasil Panen (Rp)</th>

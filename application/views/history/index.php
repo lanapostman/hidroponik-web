@@ -14,7 +14,8 @@
                                 <th>TANGGAL</th>
                                 <th class="text-center">SUHU</th>
                                 <th class="text-center">PH</th>
-                                <th class="text-center">KEKERUHAN</th>
+                                <th class="text-center">NUTRISI (PM)</th>
+                                <th class="text-center">KETINGGIAN (CM)</th>
                             </tr>
                         </thead>
                         <tbody>

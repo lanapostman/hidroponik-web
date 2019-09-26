@@ -28,9 +28,9 @@
                     		<table id="table_id" class="table table-bordered table-hover js-basic-example dataTable" style="width:100%">
                     			<thead>
                     				<tr>
-                    					<th class="">Total Tebar (Ekor)</th>
-                    					<th class="">Ikan</th>
-                    					<th class="">Tanggal Tebar</th>
+                    					<th class="">Tanaman</th>
+                    					<th class="">Total Tanam</th>
+                    					<th class="">Tanggal Tanam</th>
                     					<th class="">Tanggal Panen</th>
                     					<th class="text-center">Aksi</th>
                     				</tr>
@@ -47,8 +47,8 @@
                     			<thead>
                     				<tr>
                     					<th class="text-center">Id Siklus</th>
-                    					<th class="text-center">Total Tebar</th>
-                    					<th class="text-center">Ikan Mati</th>
+                    					<th class="text-center">Total Tanam</th>
+                    					<th class="text-center">Tanaman Mati</th>
                     					<th class="text-center">Total</th>
                     					<th class="text-center">Tanggal Perubahan</th>
                     					<th></th>
@@ -100,26 +100,26 @@
 			<div class="modal-body">
 				<form id="form1" action="#">
 					<input type="hidden" value="0" name="id_siklus">
-							<label for="email_address">Ikan</label>
+							<label for="email_address">Tanaman</label>
 							<div class="form-group">
 								<div class="form-line" style="width: 200px">
 									<select name="ikan" id="ikan" class="form-control show-tick" data-live-search="true" required>
 										<option value="">--Please Select--</option>
 										<?php foreach($ikan as $row) :?>
-											<option value="<?php echo $row['id_ikan'] ?>"><?php echo $row['nama_ikan'] ?></option>
+											<option value="<?php echo $row['id_tanaman'] ?>"><?php echo $row['nama_tanaman'] ?></option>
 										<?php endforeach; ?>
 									</select>
 								</div>
 								<span class="pesan pesan-ikan">Data tidak boleh kosong!</span>
 							</div>
-							<label for="email_address">Total Tebar</label>
+							<label for="email_address">Total Tanam</label>
 							<div class="form-group">
 								<div class="form-line" style="width: 200px">
 									<input type="number" name="tot_tebar" id="tot_tebar" class="form-control">
 								</div>
 								<span class="pesan pesan-tot_tebar">Data tidak boleh kosong!</span>
 							</div>
-							<label for="email_address">Tanggal Tebar</label>
+							<label for="email_address">Tanggal Tanam</label>
 							<div class="form-group">
 								<div class="form-line" style="width: 200px">
 									<input type="date" name="tgl_tebar" id="tgl_tebar" class="form-control">
@@ -203,7 +203,7 @@
 
 							<div class="row clearfix" style="margin-left: 0px">
 								<div class="col-md-4">
-									<label>Total Tebar</label>
+									<label>Total Tanam</label>
 									<div class="form-group">
 										<div class="form-line" style="width: ">
 											<input type="text" name="total_tebar" id="total_tebar" class="form-control" disabled>
@@ -217,7 +217,7 @@
 								</div>
 
 								<div class="col-md-4" style="left: 45px">
-									<label>Ikan Mati</label>
+									<label>Tanaman Mati</label>
 									<div class="form-group">
 										<div class="form-line" style="width: ">
 											<input type="number" name="ikan_mati" id="ikan_mati" class="form-control" required>
@@ -289,7 +289,7 @@
                 "orderable": false,
                 "targets": [4],
             },
-            { width: '70px', targets: 4 },
+            { width: '40px', targets: 4 },
             ],
  
         });
@@ -574,6 +574,7 @@
 	function edit_siklus(id_siklus) {
         save_method = 'update';
         var form = $('#form')[0].reset();
+        $('#smallModalLabel').text('Ubah Siklus');
 
         //load data dari AJAX
         $.ajax({
