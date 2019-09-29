@@ -6,7 +6,7 @@
 			}
 
 			$data['id_siklus'] = $this->siklus_model->get_id();
-			$data['ikan'] = $this->siklus_model->get_ikan();
+			$data['tanaman'] = $this->siklus_model->get_tanaman();
 
 			$this->load->view('templates/header');
 			$this->load->view('siklus/index', $data);

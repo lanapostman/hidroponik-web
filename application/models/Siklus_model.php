@@ -73,7 +73,7 @@
 			return $query->result_array();
 		}
 
-        public function get_ikan() {
+        public function get_tanaman() {
             $query = $this->db->get('jenis_tanaman');
             return $query->result_array();
         }

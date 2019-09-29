@@ -105,7 +105,7 @@
 								<div class="form-line" style="width: 200px">
 									<select name="ikan" id="ikan" class="form-control show-tick" data-live-search="true" required>
 										<option value="">--Please Select--</option>
-										<?php foreach($ikan as $row) :?>
+										<?php foreach($tanaman as $row) :?>
 											<option value="<?php echo $row['id_tanaman'] ?>"><?php echo $row['nama_tanaman'] ?></option>
 										<?php endforeach; ?>
 									</select>
